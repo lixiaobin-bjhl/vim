@@ -1,0 +1,75 @@
+
+
+let tlist_js_settings = 'javascript;s:string;a:array;o:object;f:function'
+let Tlist_Auto_Open =  0
+let NERDTree_Auto_Open =  1
+" 文件折叠
+set fdm=marker
+filetype plugin indent on 
+" 打开javascript对dom、html和css的支持
+let javascript_enable_domhtmlcss=1
+"vim.css
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+set nocompatible
+set magic
+set noswapfile
+set mouse=a
+set fencs=utf-8,gbk
+set ru "标尺信息
+set ai
+set number
+set sw=4
+set ts=4
+set dy=lastline "显示最多行，不用@@
+"以上是缩进相关
+set backspace=indent,eol,start
+colo evening
+sy on
+"set go= 无菜单、工具栏
+set nobackup
+set hlsearch
+set showmatch
+"F4快捷格式化js代码
+nnoremap <F4> :call g:Jsbeautify()<CR>
+let mapleader=","
+"tab mappings
+map <M-1> 1gt
+map <M-2> 2gt
+map <M-3> 3gt
+map <M-4> 4gt
+map <M-5> 5gt
+map <M-6> 6gt
+map <M-7> 7gt
+map <M-8> 8gt
+map <M-9> 9gt
+map <M-t> :tabnew<CR>
+map <M-w> :tabclose<CR>
+map! <M-1> <esc>1gt
+map! <M-2> <esc>2gt
+map! <M-3> <esc>3gt
+map! <M-4> <esc>4gt
+map! <M-5> <esc>5gt
+map! <M-6> <esc>6gt
+map! <M-7> <esc>7gt
+map! <M-8> <esc>8gt
+map! <M-9> <esc>9gt
+map! <M-t> <esc>:tabnew<CR>
+map! <M-w> <esc>:tabclose<CR>
+nmap <silent> <F2> :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+au GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 240)  
+
+
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
+"2006-09-13 如下：保存视图
+       au BufWinLeave *.ztx mkview
+       au BufWinEnter *.ztx silent loadview
+au BufNewFile,BufRead *.tx1 setf tx1
+au GUIEnter * simalt ~x 
+
+
+ 
